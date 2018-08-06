@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
+<!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
+<!--[if IE 8]><html class="preIE9"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <link rel="stylesheet" href="style.css">
+      <title>Report Tool | English Server</title>
+  </head>
+  <body>
+      <div class="banner">
+      <center>
+          <h1>English Server</h1>
+          <h2>Report Tool</h2>
+      </center>
+      </div>
+      <script>
+          function processReport() {
+              var report_user = document.getElementById("user").value;
+              var report_reason = document.getElementById("reason").value;
+              
+              document.getElementById("finished-username").innerHTML = "**Users:** " + report_user;
+              document.getElementById("finished-reason").innerHTML = "**Reason:** " + report_reason;
+              
+              
+              
+          }
+          </script>
+      <div class="page-content">
+        <p>Fill out the form below to file a report.</p>
+        
+          <p style="font-size:13px">Put the rulebreakers' username below. Include the last 4 numbers. If there are multiple, put them all down seperated by commas.</p>
+          <input type="text" id="user" placeholder="Rulebreakers' Username"><br>
+          <p style="font-size:13px">Below, put what they're doing that's against the rules. Include any relevant information.</p>
+          <textarea name="Text1" cols="40" rows="5" placeholder="Reason for report" id="reason"></textarea>
+          <br>
+          
+          <p>Click submit and then paste the text that appears in the #report-desk channel.</p>
+          
+          <button class="submit-button" onclick="processReport()">Submit</button>
+              
+          <div class="finished-report">
+            <p id="finished-username"></p>
+            <p id="finished-reason"></p>
+          </div>
+          
+          
+      </div>
+  
+  </body>
+</html>
