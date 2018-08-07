@@ -21,9 +21,17 @@
           function processReport() {
               var report_user = document.getElementById("user").value;
               var report_reason = document.getElementById("reason").value;
+              var report_evidence = document.getElementById("evidence").value;
               
               document.getElementById("finished-username").innerHTML = "**Users:** " + report_user;
               document.getElementById("finished-reason").innerHTML = "**Reason:** " + report_reason;
+              
+              if (report_evidence == null || report_evidence == '') {
+                  document.getElementById("finished-evidence").innerHTML = "**Evidence:** none";
+              }
+              else {
+                  document.getElementById("finished-evidence").innerHTML = "**Evidence:** " + report_evidence;
+              }
               
               
               
@@ -32,19 +40,22 @@
       <div class="page-content">
         <p>Fill out the form below to file a report.</p>
         
-          <p style="font-size:13px">Put the rulebreakers' username below. Include the last 4 numbers. If there are multiple, put them all down seperated by commas.</p>
+          <p style="font-size:13px">Put the rulebreakers username here, including the last 4 numbers (for example, Oracle#9999):</p>
           <input type="text" id="user" placeholder="Rulebreakers' Username"><br>
-          <p style="font-size:13px">Below, put what they're doing that's against the rules. Include any relevant information.</p>
+          <p style="font-size:13px">Why are you reporting them? What rule(s) are they breaking? Elaborate below.</p>
           <textarea name="Text1" cols="40" rows="5" placeholder="Reason for report" id="reason"></textarea>
           <br>
+          <p style="font-size:13px">Do you have any evidence? A screenshot or video will do. (optional)</p>
+          <textarea name="evidence1" rows="2" placeholder="Evidence" id="evidence"></textarea>
           
           <button class="submit-button" onclick="processReport()">Submit</button>
-        
-          <p>Click submit and then paste the text that appears below in the #report-desk channel (gray area).</p>
+          
+          <p>Click submit, and then paste the text that appears below into the #report-desk channel.</p>
               
           <div class="finished-report">
             <p id="finished-username"></p>
             <p id="finished-reason"></p>
+            <p id="finished-evidence"></p>
           </div>
           
           
