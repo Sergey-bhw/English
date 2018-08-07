@@ -33,6 +33,7 @@
                   document.getElementById("finished-evidence").innerHTML = "**Evidence:** " + report_evidence;
               }
               
+              document.getElementById("finished-report").style.opacity = "1";
               
               
           }
@@ -52,7 +53,7 @@
           
           <p>Click submit, and then paste the text that appears below into the #report-desk channel.</p>
               
-          <div class="finished-report">
+          <div id="finished-report">
             <p id="finished-username"></p>
             <p id="finished-reason"></p>
             <p id="finished-evidence"></p>

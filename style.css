@@ -24,8 +24,11 @@ input[type=text] {
     outline: none;
 }
 
-input[type=text]:focus {
-    box-shadow: 2px 0px #00ccff;
+input {
+    font-family: 'Open Sans', sans-serif;
+}
+input:focus, textarea:focus {
+    border: 3px solid #00ccff;
 }
 textarea {
     width: 100%;
@@ -36,6 +39,7 @@ textarea {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
+    font-family: 'Open Sans', sans-serif;
 }
 .submit-button {
     background-color: black; /* Green */
@@ -47,8 +51,10 @@ textarea {
     display: inline-block;
     font-size: 16px;
 }
-.finished-report {
+#finished-report {
+    opacity: 0;
     background-color: #E6E6E6;
     padding: 20px;
     margin: 30px;
+    word-wrap: break-word;
 }
