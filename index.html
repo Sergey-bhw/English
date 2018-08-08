@@ -3,64 +3,63 @@
 <!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
 <!--[if IE 8]><html class="preIE9"><![endif]-->
 <!--[if gte IE 9]><!--><html><!--<![endif]-->
-  <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <link rel="stylesheet" href="style.css">
-      <title>Report Tool | English Server</title>
-  </head>
-  <body>
-      <div class="banner">
-      <center>
-          <h1>English Server</h1>
-          <h2>Report Tool</h2>
-      </center>
-      </div>
-      <script>
-          function processReport() {
-              var report_user = document.getElementById("user").value;
-              var report_reason = document.getElementById("reason").value;
-              var report_evidence = document.getElementById("evidence").value;
-              
-              document.getElementById("finished-username").innerHTML = "**Users:** " + report_user;
-              document.getElementById("finished-reason").innerHTML = "**Reason:** " + report_reason;
-              
-              if (report_evidence == null || report_evidence == '') {
-                  document.getElementById("finished-evidence").innerHTML = "**Evidence:** none";
-              }
-              else {
-                  document.getElementById("finished-evidence").innerHTML = "**Evidence:** " + report_evidence;
-              }
-              
-              document.getElementById("finished-report").style.opacity = "1";
-              
-              
-          }
-          </script>
-      <div class="page-content">
-        <p>Fill out the form below to file a report.</p>
-        
-          <p style="font-size:13px">Put the rulebreakers username here, including the last 4 numbers (for example, Oracle#9999):</p>
-          <input type="text" id="user" placeholder="Rulebreakers' Username"><br>
-          <p style="font-size:13px">Why are you reporting them? What rule(s) are they breaking? Elaborate below.</p>
-          <textarea name="Text1" cols="40" rows="5" placeholder="Reason for report" id="reason"></textarea>
-          <br>
-          <p style="font-size:13px">Do you have any evidence? A screenshot or video will do. (optional)</p>
-          <textarea name="evidence1" rows="2" placeholder="Evidence" id="evidence"></textarea>
-          
-          <button class="submit-button" onclick="processReport()">Submit</button>
-          
-          <p>Click submit, and then paste the text that appears below into the #report-desk channel.</p>
-              
-          <div id="finished-report">
-            <p id="finished-username"></p>
-            <p id="finished-reason"></p>
-            <p id="finished-evidence"></p>
-          </div>
-          
-          
-      </div>
-  
-  </body>
+<head>      
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<title>Report Tool | English Server</title>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+<div class="banner">
+<center><h1>English Server</h1></center>
+<center><h2>Report Tool</h2></center>
+</div>
+
+<div class="page-content">
+<p style="font-size:15px;">Enter the username of the person you're reporting below, including the last 4 numbers (ex: Oracle#8470). For multiple people, seperate the username with commas.</p>
+<input type="text" placeholder="Username" id="report-user">
+
+<p style="font-size:15px;">Enter the reason you're reporting this person. What are they doing? What rules are they breaking? Include any information you think is relevant.</p>
+
+<textarea cols="40" rows="5" placeholder="Reason for report" id="report-reason"></textarea>
+
+<p style="font-size:15px;">Here, include any evidence, such as videos or screenshots. Evidence is not required, but will allow us to take action faster.</p>
+
+<textarea cols="40" rows="2" placeholder="Report evidence" id="report-evidence"></textarea>
+
+<p>Now, copy the text below and paste it into the #report-desk channel.</p>
+
+<div id="finished-report">
+<p id="finished-user"></p>
+<p id="finished-reason"></p>
+<p id="finished-evidence"></p>
+</div>
+
+</div>
+ 
+<script>
+$( "#report-user" )
+  .keyup(function() {
+    var value = $( this ).val();
+    $( "#finished-user" ).text( "**Username:** " + value );
+  })
+  .keyup();
+$( "#report-reason" )
+  .keyup(function() {
+    var value = $( this ).val();
+    $( "#finished-reason" ).text( "**Reason:** " + value );
+  })
+  .keyup();
+$( "#report-evidence" )
+  .keyup(function() {
+    var value = $( this ).val();
+    $( "#finished-evidence" ).text( "**Evidence:** " + value );
+  })
+  .keyup();
+</script>
+ 
+</body>
 </html>

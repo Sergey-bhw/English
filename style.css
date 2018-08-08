@@ -52,7 +52,7 @@ textarea {
     font-size: 16px;
 }
 #finished-report {
-    opacity: 0;
+    opacity: 1;
     background-color: #E6E6E6;
     padding: 20px;
     margin: 30px;
